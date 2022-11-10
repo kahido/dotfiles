@@ -30,6 +30,8 @@ n.setup({
     match_paren = false,
   },
   custom_highlights = {
+    -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+    LineNr = { fg = "#6c6c6c" },
     -- -- Annotations that can be attached to the code to denote some kind of meta information. e.g. C++/Dart attributes.
     TSAttribute = { fg = colors.red },
     -- -- Boolean literals: `True` and `False` in Python.

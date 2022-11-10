@@ -22,4 +22,5 @@ packer.startup(function(use)
   use 'nvim-treesitter/playground'
   use 'lewis6991/gitsigns.nvim'
   use 'folke/zen-mode.nvim'
+  use 'rhysd/vim-clang-format'
 end)

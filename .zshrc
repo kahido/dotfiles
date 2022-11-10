@@ -12,6 +12,9 @@ HISTFILE=~/.zhistory
 HISTSIZE=10000
 SAVEHIST=10000
 
+# Disable auto rename window title
+DISABLE_AUTO_TITLE="true"
+
 # Add commands to history as they are entered, don't wait for shell to exit
 setopt INC_APPEND_HISTORY
 # Also remember command start time and duration
@@ -71,3 +74,5 @@ if [[ ! "$PATH" == *${HOME}/.local/bin* ]]; then
 fi
 
 alias config='/usr/bin/git --git-dir=${HOME}/.dotfiles/ --work-tree=${HOME}'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
