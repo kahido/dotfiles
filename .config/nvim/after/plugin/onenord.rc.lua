@@ -33,64 +33,64 @@ n.setup({
     -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     LineNr = { fg = "#6c6c6c" },
     -- -- Annotations that can be attached to the code to denote some kind of meta information. e.g. C++/Dart attributes.
-    TSAttribute = { fg = colors.red },
+    ["@attribute"] = { fg = colors.red },
     -- -- Boolean literals: `True` and `False` in Python.
     -- TSBoolean = { fg = colors.orange },
     -- -- Character literals: `'a'` in C.
     -- TSCharacter = { fg = colors.green },
     -- -- Line comments and block comments.
-    TSComment = { fg = "#6c6c6c" },
+    ["@comment"] = { fg = "#6c6c6c" },
     -- -- Keywords related to conditionals: `if`, `when`, `cond`, etc.
-    TSConditional = { fg = colors.yellow, style = config.styles.keywords },
+    ["@conditional"] = { fg = colors.yellow, style = config.styles.keywords },
     -- -- Constants identifiers. These might not be semantically constant. E.g. uppercase variables in Python.
-    TSConstant = { fg = colors.yellow },
+    ["@constant"] = { fg = colors.yellow },
     -- -- Built-in constant values: `nil` in Lua.
     -- TSConstBuiltin = { fg = colors.orange },
     -- -- Constants defined by macros: `NULL` in C.
     -- TSConstMacro = { fg = colors.red },
     -- -- Constructor calls and definitions: `{}` in Lua, and Java constructors.
-    TSConstructor = { fg = "#87d7ff" },
+    ["@constructor"] = { fg = "#87d7ff" },
     -- -- Syntax/parser errors. This might highlight large sections of code while the user is typing
     -- -- still incomplete code, use a sensible highlight.
-    TSError = { fg = colors.fg_light },
+    ["@error"] = { fg = colors.fg_light },
     -- -- Exception related keywords: `try`, `except`, `finally` in Python.
-    TSException = { fg = colors.dark_red },
+    ["@exception"] = { fg = colors.dark_red },
     -- -- Object and struct fields.
-    TSField = { fg = colors.pink },
+    ["@field"] = { fg = colors.pink },
     -- -- Floating-point number literals.
     -- TSFloat = { fg = colors.orange },
     -- -- Function calls and definitions.
-    TSFunction = { fg = "#87d7ff", style = config.styles.functions },
+    ["@function"] = { fg = "#87d7ff", style = config.styles.functions },
     -- -- Built-in functions: `print` in Lua.
     -- TSFuncBuiltin = { fg = colors.cyan, style = config.styles.functions },
     -- -- Macro defined functions (calls and definitions): each `macro_rules` in Rust.
-    TSFuncMacro = { fg = colors.dark_red },
+    ["@function.macro"] = { fg = colors.dark_red },
     -- -- File or module inclusion keywords: `#include` in C, `use` or `extern crate` in Rust.
-    TSInclude = { fg = colors.dark_red },
+    ["@include"] = { fg = colors.dark_red },
     -- -- Keywords that don't fit into other categories.
-    TSKeyword = { fg = colors.dark_blue, style = config.styles.keywords },
+    ["@keyword"] = { fg = colors.dark_blue, style = config.styles.keywords },
     -- -- Keywords used to define a function: `function` in Lua, `def` and `lambda` in Python.
     -- TSKeywordFunction = { fg = colors.purple, style = config.styles.keywords },
     -- -- Unary and binary operators that are English words: `and`, `or` in Python; `sizeof` in C.
     -- TSKeywordOperator = { fg = colors.purple },
     -- -- Keywords like `return` and `yield`.
-    TSKeywordReturn = { fg = "#ffaf5f" },
+    ["@keyword.return"] = { fg = "#ffaf5f" },
     -- -- GOTO labels: `label:` in C, and `::label::` in Lua.
     -- TSLabel = { fg = colors.purple },
     -- -- Method calls and definitions.
-    TSMethod = { fg = "#87d7ff" },
+    ["@method"] = { fg = "#87d7ff" },
     -- -- Identifiers referring to modules and namespaces.
-    TSNamespace = { fg = "#afd787" },
+    ["@namespace"] = { fg = "#afd787" },
     -- -- Numeric literals that don't fit into other categories.
-    TSNumber = { fg = "#afd787" },
+    ["@number"] = { fg = "#afd787" },
     -- -- Binary or unary operators: `+`, and also `->` and `*` in C.
-    TSOperator = { fg = colors.fg_light },
+    ["@operator"] = { fg = colors.fg_light },
     -- -- Parameters of a function.
-    TSParameter = { fg = colors.fg_light },
+    ["@parameter"] = { fg = colors.fg_light },
     -- -- References to parameters of a function.
     -- TSParameterReference = { fg = colors.red },
     -- -- Same as `TSField`.
-    TSProperty = { fg = colors.fg },
+    ["@property"] = { fg = colors.fg },
     -- -- Punctuation delimiters: Periods, commas, semicolons, etc.
     -- TSPunctDelimiter = { fg = colors.dark_blue },
     -- -- Brackets, braces, parentheses, etc.
@@ -98,9 +98,9 @@ n.setup({
     -- -- Special punctuation that doesn't fit into the previous categories.
     -- TSPunctSpecial = { fg = colors.dark_blue },
     -- -- Keywords related to loops: `for`, `while`, etc.
-    TSRepeat = { fg = colors.yellow, style = config.styles.keywords },
+    ["@repeat"] = { fg = colors.yellow, style = config.styles.keywords },
     -- -- String literals.
-    TSString = { fg = "#5faf5f", style = config.styles.strings },
+    ["@string"] = { fg = "#5faf5f", style = config.styles.strings },
     -- -- Regular expression literals.
     -- TSStringRegex = { fg = colors.orange },
     -- -- Escape characters within a string: `\n`, `\t`, etc.
@@ -142,13 +142,13 @@ n.setup({
     -- -- Text representation of a danger note.
     -- TSDanger = { fg = colors.error, style = "bold" },
     -- -- Type (and class) definitions and annotations.
-    TSType = { fg = colors.fg },
+    ["@type"] = { fg = colors.fg },
     -- -- Built-in types: `i32` in Rust.
-    TSTypeBuiltin = { fg = "#ffaf5f" },
+    ["@type.builtin"] = { fg = "#ffaf5f" },
     -- -- Variable names that don't fit into other categories.
-    TSVariable = { fg = colors.fg, style = config.styles.variables },
+    ["@variable"] = { fg = colors.fg, style = config.styles.variables },
     -- -- Variable names defined by the language: `this` or `self` in Javascript.
-    TSVariableBuiltin = { fg = "#ffaf5f", style = config.styles.variables },
+    ["@variable.builtin"] = { fg = "#ffaf5f", style = config.styles.variables },
   }, -- Overwrite default highlight groups
   custom_colors = {
     blue = "#5fd7ff",

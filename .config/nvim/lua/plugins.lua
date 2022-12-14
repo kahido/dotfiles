@@ -8,7 +8,11 @@ vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function(use)
   use 'wbthomason/packer.nvim' -- Plugin Manager
-  use 'rmehri01/onenord.nvim' -- Colorscheme
+  ---- Colorscheme
+  use 'rmehri01/onenord.nvim'
+  use 'navarasu/onedark.nvim'
+  use '~/colorscheme/cppcs'
+  ---- End of Colorscheme
   use 'norcalli/nvim-colorizer.lua'
   use 'nvim-lualine/lualine.nvim' -- Statusline
   use {
