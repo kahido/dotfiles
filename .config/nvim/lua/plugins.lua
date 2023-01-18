@@ -8,6 +8,12 @@ vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function(use)
   use 'wbthomason/packer.nvim' -- Plugin Manager
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.1',
+  -- or                            , branch = '0.1.x',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+  use 'nvim-telescope/telescope-file-browser.nvim'
   ---- Colorscheme
   use 'rmehri01/onenord.nvim'
   use '~/colorscheme/cppcs'
@@ -20,9 +26,7 @@ packer.startup(function(use)
   }
   use 'nvim-lua/plenary.nvim'
   use 'kyazdani42/nvim-web-devicons' -- File icons
-  use 'nvim-telescope/telescope.nvim'
-  use 'nvim-telescope/telescope-file-browser.nvim'
-  use 'nvim-treesitter/playground'
+  -- use 'nvim-treesitter/playground'
   use 'lewis6991/gitsigns.nvim'
   use 'folke/zen-mode.nvim'
   use 'rhysd/vim-clang-format'

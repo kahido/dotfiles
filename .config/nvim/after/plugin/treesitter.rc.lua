@@ -8,7 +8,7 @@ ts.setup {
     additional_vim_regex_highlighting = false,
   },
   indent = {
-    enable = true,
+    enable = false,
     disable = {},
   },
   ensure_installed = {
@@ -17,9 +17,6 @@ ts.setup {
     "json",
     "yaml",
     "lua"
-  },
-  autotag = {
-    enable = true,
   },
   playground = {
     enable = true,
