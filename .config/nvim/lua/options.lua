@@ -38,7 +38,7 @@ vim.opt.scrolloff = 8
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "90"
 
 vim.opt.shell = 'zsh'
 vim.opt.tags = { './.ctags;,.ctags' }

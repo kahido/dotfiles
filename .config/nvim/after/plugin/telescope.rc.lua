@@ -1,7 +1,12 @@
-local status, telescope = pcall(require, "telescope")
-if (not status) then return end
-local actions = require('telescope.actions')
-local builtin = require("telescope.builtin")
+local telescope_status, telescope = pcall(require, "telescope")
+if not telescope_status then
+  return
+end
+
+local actions_status, actions = pcall(require, "telescope.actions")
+if not actions_status then
+  return
+end
 
 local function telescope_buffer_dir()
   return vim.fn.expand('%:p:h')
@@ -40,13 +45,19 @@ telescope.setup {
   },
 }
 
+telescope.load_extension("fzf")
 telescope.load_extension("file_browser")
+
+local builtin_status, builtin = pcall(require, "telescope.builtin")
+if not builtin_status then
+  return
+end
 
 vim.keymap.set('n', ';f',
   function()
     builtin.find_files({
       no_ignore = false,
-      hidden = false
+      hidden = true
     })
   end)
 -- vim.keymap.set('n', ';r', function()
