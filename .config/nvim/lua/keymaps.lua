@@ -44,10 +44,16 @@ vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
+-- Plugin keymaps
 -- Show Treesitter Highlight Group
 vim.keymap.set('n', 'qq', ':TSHighlightCapturesUnderCursor<CR>', { silent = true })
--- Regenerate CTages
+
+-- ZenMode
+vim.keymap.set('n', '<leader>z', '<CMD>ZenMode<CR>', { silent = true })
+
+-- CTags
 vim.keymap.set('n', '<C-w>t', ':!$HOME/.local/bin/ctags -R --languages=C++,C --fields=+niazS --extras=+q --kinds-c++=+pxZ --kinds-c=+px -f $HOME/workspace/sources/.ctags $HOME/workspace/sources/*<CR>', { silent = true })
+
 -- Clang Format
 vim.keymap.set('n', '<C-w>f', ':<C-u>ClangFormat<CR>', {})
 vim.keymap.set('v', '<C-w>f', ':ClangFormat<CR>', {})

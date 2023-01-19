@@ -33,8 +33,7 @@ vim.opt.guicursor = ""
 vim.opt.backspace = "indent,eol,start"
 
 vim.opt.scrolloff = 8
--- vim.opt.signcolumn = "yes"
--- vim.opt.isfname:append("@-@")
+vim.opt.signcolumn = "yes"
 
 vim.opt.updatetime = 50
 

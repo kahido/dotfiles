@@ -39,6 +39,23 @@ packer.startup(function(use)
   -- git
   use 'lewis6991/gitsigns.nvim'
 
+  -- autocompletion
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-buffer'
+
+  -- snippets
+  use 'L3MON4D3/LuaSnip'
+  use 'saadparwaiz1/cmp_luasnip'
+  use 'rafamadriz/friendly-snippets'
+
+  -- managing & installing lsp servers
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
+
+  -- configuring lsp servers
+  use 'neovim/nvim-lspconfig'
+  use 'hrsh7th/cmp-nvim-lsp'
+
   -- programming tools
   use 'rhysd/vim-clang-format'
 
