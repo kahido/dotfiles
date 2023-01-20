@@ -29,6 +29,7 @@ vim.opt.termguicolors = true
 vim.opt.background = "dark"
 vim.opt.cursorline = true
 vim.opt.guicursor = ""
+vim.opt.mouse = ""
 
 vim.opt.backspace = "indent,eol,start"
 

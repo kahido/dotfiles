@@ -51,6 +51,11 @@ vim.keymap.set('n', 'qq', ':TSHighlightCapturesUnderCursor<CR>', { silent = true
 -- ZenMode
 vim.keymap.set('n', '<leader>z', '<CMD>ZenMode<CR>', { silent = true })
 
+-- hop
+vim.keymap.set('n', '<leader>t', ':HopWord<CR>')
+vim.keymap.set('n', '<leader>T', ':HopWordCurrentLine<CR>')
+vim.keymap.set('n', '<leader>/', ':HopPattern<CR>')
+
 -- CTags
 vim.keymap.set('n', '<C-w>t', ':!$HOME/.local/bin/ctags -R --languages=C++,C --fields=+niazS --extras=+q --kinds-c++=+pxZ --kinds-c=+px -f $HOME/workspace/sources/.ctags $HOME/workspace/sources/*<CR>', { silent = true })
 

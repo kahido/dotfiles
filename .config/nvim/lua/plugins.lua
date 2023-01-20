@@ -60,4 +60,8 @@ packer.startup(function(use)
   use 'rhysd/vim-clang-format'
 
   use 'folke/zen-mode.nvim'
+
+  use {
+    'phaazon/hop.nvim', branch = 'v2'
+  }
 end)
