@@ -42,3 +42,8 @@ vim.opt.colorcolumn = "90"
 
 vim.opt.shell = 'zsh'
 vim.opt.tags = { './.ctags;,.ctags' }
+
+vim.api.nvim_create_autocmd({"BufNewFile", "BufReadPost"}, {
+  pattern = {"*.lua", "*.{yaml,yml}", "CMakeLists.txt"},
+  command = "setlocal ts=2 sts=2 sw=2 expandtab",
+})

@@ -10,6 +10,11 @@
         <execute>alacritty</execute>
       </action>
     </item>
+    <item label="Urxvt">
+      <action name="Execute">
+        <execute>urxvt</execute>
+      </action>
+    </item>
     <item label="Chromium">
       <action name="Execute">
         <execute>chromium</execute>
