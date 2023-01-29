@@ -31,7 +31,7 @@ packer.startup(function(use)
 
   -- colorscheme
   use 'rmehri01/onenord.nvim'
-  use '~/colorscheme/cppcs'
+  use '~/colorscheme/maya-ko'
 
   -- file icons
   use 'kyazdani42/nvim-web-devicons'

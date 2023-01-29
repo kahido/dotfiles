@@ -1,5 +1,8 @@
 local status, n = pcall(require, "onenord")
-if (not status) then return end
+-- if not status then
+if status then
+  return
+end
 
 -- local color_status, colors = pcall(require, "onenord.colors")
 -- local config_status, config = pcall(require, "onenord.config")
