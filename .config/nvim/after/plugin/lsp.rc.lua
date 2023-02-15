@@ -12,9 +12,9 @@ mason.setup()
 
 mason_lspconfig.setup({
   ensure_installed = {
-    "clangd",
+    -- "clangd",
     "cmake",
-    "sumneko_lua",
+    "lua_ls",
   }
 })
 
@@ -66,7 +66,7 @@ mason_lspconfig.setup_handlers({
 })
 
 -- configure lua server (with special settings)
-lspconfig["sumneko_lua"].setup({
+lspconfig["lua_ls"].setup({
   capabilities = lsp_capabilities,
   on_attach = lsp_attach,
   settings = { -- custom settings for lua

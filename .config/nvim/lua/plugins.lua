@@ -64,4 +64,6 @@ packer.startup(function(use)
   use {
     'phaazon/hop.nvim', branch = 'v2'
   }
+
+  use 'embear/vim-foldsearch'
 end)
