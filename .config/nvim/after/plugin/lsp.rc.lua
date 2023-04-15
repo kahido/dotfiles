@@ -12,9 +12,11 @@ mason.setup()
 
 mason_lspconfig.setup({
   ensure_installed = {
-    -- "clangd",
+    -- "clangd", -- C/C++ language server not configured (install manualy)
     "cmake",
     "lua_ls",
+    "bashls",
+    "jsonls"
   }
 })
 
@@ -46,7 +48,7 @@ local lsp_attach = function(_, bufnr)
 
   vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     vim.lsp.diagnostic.on_publish_diagnostics, {
-      virtual_text = false,
+      virtual_text = true,
       signs = true,
       update_in_insert = false,
     }

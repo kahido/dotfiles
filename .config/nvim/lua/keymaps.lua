@@ -57,7 +57,7 @@ vim.keymap.set('n', '<leader>T', ':HopWordCurrentLine<CR>')
 vim.keymap.set('n', '<leader>/', ':HopPattern<CR>')
 
 -- CTags
-vim.keymap.set('n', '<C-w>t', ':!$HOME/.local/bin/ctags -R --languages=C++,C --fields=+niazS --extras=+q --kinds-c++=+pxZ --kinds-c=+px -f $HOME/workspace/sources/.ctags $HOME/workspace/sources/*<CR>', { silent = true })
+vim.keymap.set('n', '<C-w>t', ':!ctags -R --languages=C++,C --fields=+niazS --extras=+q --kinds-c++=+pxZ --kinds-c=+px -f $HOME/coding/.ctags $HOME/coding/*<CR>', { silent = true })
 
 -- Clang Format
 vim.keymap.set('n', '<C-w>f', ':<C-u>ClangFormat<CR>', {})

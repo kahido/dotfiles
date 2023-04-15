@@ -66,4 +66,6 @@ packer.startup(function(use)
   }
 
   use 'embear/vim-foldsearch'
+
+  use 'ThePrimeagen/vim-be-good'
 end)
