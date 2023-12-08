@@ -13,7 +13,7 @@ packer.startup(function(use)
   -- fuzzy finding
   use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
   use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.1',
+    'nvim-telescope/telescope.nvim', tag = '0.1.5',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
   use 'nvim-telescope/telescope-file-browser.nvim'

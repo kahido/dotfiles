@@ -20,6 +20,11 @@
         <execute>chromium</execute>
       </action>
     </item>
+    <item label="Obsidian">
+      <action name="Execute">
+        <execute>flatpak run md.obsidian.Obsidian</execute>
+      </action>
+    </item>
     <item label="VLC">
       <action name="Execute">
         <execute>vlc</execute>

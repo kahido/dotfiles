@@ -16,7 +16,8 @@ ts.setup {
     "cmake",
     "json",
     "yaml",
-    "lua"
+    "lua",
+    "comment"
   },
   playground = {
     enable = true,
