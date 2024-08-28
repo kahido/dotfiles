@@ -1,6 +1,5 @@
 local status, n = pcall(require, "onenord")
--- if not status then
-if status then
+if status or not status then -- disable for w while
   return
 end
 

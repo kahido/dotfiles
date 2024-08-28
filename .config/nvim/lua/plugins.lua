@@ -42,11 +42,12 @@ packer.startup(function(use)
   -- autocompletion
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-buffer'
+  use 'delphinus/cmp-ctags'
 
   -- snippets
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
-  use 'rafamadriz/friendly-snippets'
+  -- use 'rafamadriz/friendly-snippets'
 
   -- managing & installing lsp servers
   use 'williamboman/mason.nvim'

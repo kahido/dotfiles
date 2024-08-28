@@ -57,12 +57,9 @@ vim.keymap.set('n', ';f',
   function()
     builtin.find_files({
       no_ignore = false,
-      hidden = true
+      hidden = false
     })
   end)
--- vim.keymap.set('n', ';r', function()
---   builtin.live_grep()
--- end)
 vim.keymap.set('n', ';g', function()
   builtin.git_files()
 end)
@@ -70,17 +67,11 @@ vim.keymap.set('n', '\\\\', function()
   builtin.buffers()
 end)
 vim.keymap.set('n', ';t', function()
-  builtin.help_tags()
+  builtin.tags()
 end)
-vim.keymap.set('n', ';h', function()
-  builtin.grep_string({ search = vim.fn.input("Grep > ") });
+vim.keymap.set('n', ';;', function()
+  builtin.resume()
 end)
--- vim.keymap.set('n', ';;', function()
---   builtin.resume()
--- end)
--- vim.keymap.set('n', ';e', function()
---   builtin.diagnostics()
--- end)
 vim.keymap.set("n", "fb", function()
   telescope.extensions.file_browser.file_browser({
     path = "%:p:h",

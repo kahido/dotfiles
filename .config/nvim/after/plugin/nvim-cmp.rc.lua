@@ -30,8 +30,18 @@ cmp.setup({
   }),
   -- sources for autocompletion
   sources = cmp.config.sources({
-    -- { name = "nvim_lsp" }, -- lsp
-    { name = "luasnip" }, -- snippets
-    { name = "buffer" }, -- text within current buffer
+    -- Other Sources
+    {
+      name = "ctags",
+      option = {
+        executable = "ctags",
+        trigger_characters = { ".", "::", "->", "(" },
+        trigger_characters_ft = { "c", "cpp" },
+      },
+      group_index = 2
+    },
+    -- { name = "nvim_lsp", group_index = 2 }, -- lsp
+    -- { name = "luasnip", group_index = 2 }, -- snippets
+    { name = "buffer", group_index = 2 }, -- text within current buffer
   }),
 })
