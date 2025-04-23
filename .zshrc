@@ -15,16 +15,16 @@ SAVEHIST=10000
 # Disable auto rename window title
 DISABLE_AUTO_TITLE="true"
 
-# Add commands to history as they are entered, don't wait for shell to exit
-setopt INC_APPEND_HISTORY
+# Share history on all terminals
+setopt SHARE_HISTORY
 # Also remember command start time and duration
 setopt EXTENDED_HISTORY
 # Do not keep duplicate commands in history
 setopt HIST_IGNORE_ALL_DUPS
 # Do not remember commands that start with a whitespace
 setopt HIST_IGNORE_SPACE
-# Correct spelling of all arguments in the command line
-setopt CORRECT_ALL
+# Disable correct spelling of all arguments in the command line
+unsetopt CORRECT_ALL
 
 # vi mode
 #bindkey -v
@@ -35,9 +35,6 @@ zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
 #_comp_options+=(globdots)		# Include hidden files.
-
-# Disable auto correct
-unsetopt correct_all
 
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
