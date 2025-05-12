@@ -15,8 +15,8 @@ SAVEHIST=10000
 # Disable auto rename window title
 DISABLE_AUTO_TITLE="true"
 
-# Share history on all terminals
-setopt SHARE_HISTORY
+# Add commands to history as they are entered, don't wait for shell to exit
+setopt INC_APPEND_HISTORY
 # Also remember command start time and duration
 setopt EXTENDED_HISTORY
 # Do not keep duplicate commands in history
@@ -73,3 +73,5 @@ fi
 alias git-dotfiles='/usr/bin/git --git-dir=${HOME}/.dotfiles/ --work-tree=${HOME}'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+fpath+=${ZDOTDIR:-~}/.zsh_functions

@@ -32,6 +32,7 @@ packer.startup(function(use)
   -- colorscheme
   use 'rmehri01/onenord.nvim'
   use '~/colorscheme/maya-ko'
+  use 'MTDL9/vim-log-highlighting'
 
   -- file icons
   use 'kyazdani42/nvim-web-devicons'
