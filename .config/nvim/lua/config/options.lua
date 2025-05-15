@@ -48,3 +48,4 @@ vim.opt.colorcolumn = "90"
 
 vim.opt.shell = 'zsh'
 vim.opt.tags = { './.ctags;,.ctags' }
+vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
