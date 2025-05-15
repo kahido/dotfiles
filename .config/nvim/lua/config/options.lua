@@ -33,6 +33,12 @@ vim.opt.mouse = ""
 
 vim.opt.backspace = "indent,eol,start"
 
+vim.opt.wrap = true
+-- vim.opt.foldmethod = "expr"
+-- vim.opt.foldenable = true
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- vim.o.foldtext = "foldtext()"
+
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 
