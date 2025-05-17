@@ -7,22 +7,11 @@ return {
   },
 
   {
-    'neovim/nvim-lspconfig',
-    event = { "BufReadPre", "BufNewFile" },
-    dependencies = {
-      'hrsh7th/cmp-nvim-lsp',
-      {
-        'williamboman/mason-lspconfig.nvim',
-        dependencies = { 'williamboman/mason.nvim' },
-      },
-    },
+    'williamboman/mason-lspconfig.nvim',
     config = function()
-      local lspconfig = require("lspconfig")
-      local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-      local mason_lspconfig = require("mason-lspconfig")
-      mason_lspconfig.setup({
+      require("mason-lspconfig").setup {
         automatic_installation = true,
+        automatic_enable = true,
         ensure_installed = {
           "clangd", -- C/C++ language server not configured (install manualy)
           "cmake",
@@ -30,60 +19,32 @@ return {
           "bashls",
           "jsonls"
         },
-        handlers = {
-          lspconfig.lua_ls.setup({
-            capabilities = lsp_capabilities,
-          }),
-        },
-      })
+      }
+    end,
+  },
 
-     --  mason_lspconfig.setup_handlers({
-     --    function(server)
-     --      nvim_lsp[server].setup({
-     --        capabilities = capabilities,
-     --        on_attach = on_attach,
-     --      })
-     --    end,
-        -- ["cmake"] = function()
-        --   nvim_lsp["cmake"].setup({
-        --     on_attach = on_attach,
-        --     capabilities = capabilities,
-        --   })
-        -- end,
-        -- ["lua_ls"] = function()
-        --   nvim_lsp["lua_ls"].setup({
-        --     on_attach = on_attach,
-        --     capabilities = capabilities,
-        --     settings = { -- custom settings for lua
-        --       Lua = {
-        --         -- make the language server recognize "vim" global
-        --         diagnostics = {
-        --           globals = { "vim" },
-        --         },
-        --         workspace = {
-        --           -- make language server aware of runtime files
-        --           library = {
-        --             [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-        --             [vim.fn.stdpath("config") .. "/lua"] = true,
-        --           },
-        --         },
-        --       },
-        --     },
-        --   })
-        -- end,
-        -- ["bashls"] = function()
-        --   nvim_lsp["bashls"].setup({
-        --     on_attach = on_attach,
-        --     capabilities = capabilities,
-        --   })
-        -- end,
-        -- ["jsonls"] = function()
-        --   nvim_lsp["jsonls"].setup({
-        --     on_attach = on_attach,
-        --     capabilities = capabilities,
-        --   })
-        -- end,
-      -- })
+  {
+    'neovim/nvim-lspconfig',
+    config = function()
+      vim.lsp.config['lua_ls'] = {
+        settings = {
+          Lua = {
+            diagnostics = {
+              -- Get the language server to recognize the `vim` global
+              globals = { "vim" },
+            },
+          }
+        }
+      }
+
+      vim.diagnostic.config({
+        virtual_text = true,
+        signs = true,
+        update_in_insert = false,
+        underline = true,
+        severity_sort = false,
+        float = true,
+      })
     end,
   },
 }
