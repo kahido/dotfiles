@@ -38,7 +38,9 @@ return {
     lazy = false,
     priority = 1000,
     opts = {
-      transparent = true,
+      options = {
+        transparent = true,
+      },
     },
     config = function()
       vim.cmd("colorscheme maya-ko")
@@ -47,6 +49,7 @@ return {
 
   {
     'MTDL9/vim-log-highlighting',
-    lazy = true
+    lazy = true,
+    ft = "log",
   },
 }

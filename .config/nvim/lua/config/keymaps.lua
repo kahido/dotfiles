@@ -39,7 +39,8 @@ vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+
+vim.keymap.set({"n", "v"}, "<leader>f", function() vim.lsp.buf.format({ async = true }) end)
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
@@ -56,7 +57,7 @@ vim.keymap.set('n', '<leader>T', ':HopWordCurrentLine<CR>')
 vim.keymap.set('n', '<leader>/', ':HopPattern<CR>')
 
 -- CTags
-vim.keymap.set('n', '<C-w>t', ':!ctags -R --languages=C++,C --fields=+niazS --extras=+q --kinds-c++=+pxZ --kinds-c=+px -f $HOME/coding/.ctags $HOME/coding/*<CR>', { silent = true })
+vim.keymap.set('n', '<C-w>t', ':!ctags -R --languages=C++,C --fields=+iaS --extras=+q --kinds-c++=+pZ --kinds-c=+p -f $HOME/code/tags $HOME/code/*<CR>', { silent = true })
 
 -- Clang Format
 vim.keymap.set('n', '<C-w>f', ':<C-u>ClangFormat<CR>', {})

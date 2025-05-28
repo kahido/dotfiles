@@ -74,7 +74,7 @@ return {
       desc = "ists files in your current working directory, without hidden"
     },
   },
-  config = function(_, opts)
+  opts = function(_, opts)
     local telescope = require("telescope")
     local actions = require("telescope.actions")
     local fb_actions = require("telescope").extensions.file_browser.actions
@@ -131,5 +131,7 @@ return {
     telescope.setup(opts)
     telescope.load_extension("fzf")
     telescope.load_extension("file_browser")
+
+    return opts
   end
 }

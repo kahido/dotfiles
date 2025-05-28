@@ -25,6 +25,9 @@ return {
 
   {
     'neovim/nvim-lspconfig',
+    dependencies = {
+      "netmute/ctags-lsp.nvim",
+    },
     config = function()
       vim.lsp.config['lua_ls'] = {
         settings = {
@@ -35,6 +38,9 @@ return {
             },
           }
         }
+      }
+
+      vim.lsp.config['ctags-lsp'] = {
       }
 
       vim.diagnostic.config({

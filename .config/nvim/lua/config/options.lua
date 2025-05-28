@@ -31,12 +31,23 @@ vim.opt.wrap = true
 vim.opt.backspace = { "start", "eol", "indent" }
 vim.opt.path:append({ "**" })
 vim.opt.mouse = ""
+vim.opt.signcolumn = "yes"
 
 vim.opt.cursorline = true
 vim.opt.colorcolumn = "90"
 
-vim.opt.tags = { './.ctags;,.ctags' }
+vim.opt.tags = { 'tags;' }
 vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
+
+-- Lists
+vim.opt.list = true
+vim.opt.listchars = {
+  tab = '» ',
+  trail = '·',
+  extends = '>',
+  precedes = '<',
+  nbsp = '␣',
+}
 
 -- Undercurl
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
@@ -48,13 +59,3 @@ vim.opt.formatoptions:append({ "r" })
 -- vim.g.lazyvim_prettier_needs_config = true
 vim.g.lazyvim_picker = "telescope"
 vim.g.lazyvim_cmp = "blink.cmp"
-
--- vim.opt.swapfile = false
--- vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
--- vim.opt.undofile = true
--- vim.opt.smartcase = true
--- vim.opt.incsearch = true
--- vim.opt.termguicolors = true
--- vim.opt.guicursor = ""
--- vim.opt.signcolumn = "yes"
--- vim.opt.updatetime = 50
