@@ -1,0 +1,5 @@
+return {
+  {
+    "embear/vim-foldsearch"
+  },
+}

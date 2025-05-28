@@ -48,10 +48,4 @@ return {
     'kyazdani42/nvim-web-devicons',
     lazy = true
   },
-
-  {
-    'folke/zen-mode.nvim',
-    cmd = "ZenMode",
-    keys = { { "<leader>z", "<cmd>ZenMode<cr>", desc = "Zen Mode" } },
-  },
 }
