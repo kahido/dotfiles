@@ -19,7 +19,7 @@ return {
           hidden = false
         })
       end,
-      desc = "ists files in your current working directory, without hidden"
+      desc = "Lists files in your current working directory, without hidden"
     },
     {
       ";g",
@@ -27,7 +27,7 @@ return {
         local builtin = require("telescope.builtin")
         builtin.git_files()
       end,
-      desc = "ists files in your current working directory, without hidden"
+      desc = "Lists files in your git repository"
     },
     {
       "\\\\",
@@ -35,7 +35,7 @@ return {
         local builtin = require("telescope.builtin")
         builtin.buffers()
       end,
-      desc = "ists files in your current working directory, without hidden"
+      desc = "Lists open buffers"
     },
     {
       ";t",
@@ -43,7 +43,7 @@ return {
         local builtin = require("telescope.builtin")
         builtin.tags()
       end,
-      desc = "ists files in your current working directory, without hidden"
+      desc = "Lists tags"
     },
     {
       ";;",
@@ -51,7 +51,7 @@ return {
         local builtin = require("telescope.builtin")
         builtin.resume()
       end,
-      desc = "ists files in your current working directory, without hidden"
+      desc = "Resume the previous telescope picker"
     },
     {
       "fb",
@@ -71,7 +71,41 @@ return {
           layout_config = { height = 40 }
         })
       end,
-      desc = "ists files in your current working directory, without hidden"
+      desc = "Open File Browser with the path of the current buffer"
+    },
+    {
+      ";r",
+      function()
+        local builtin = require("telescope.builtin")
+        builtin.live_grep({
+          additional_args = { "--hidden" },
+        })
+      end,
+      desc = "Search for a string in your current working directory and get results live as you type, respects .gitignore",
+    },
+    {
+      ";e",
+      function()
+        local builtin = require("telescope.builtin")
+        builtin.diagnostics()
+      end,
+      desc = "Lists Diagnostics for all open buffers or a specific buffer",
+    },
+    {
+      ";s",
+      function()
+        local builtin = require("telescope.builtin")
+        builtin.treesitter()
+      end,
+      desc = "Lists Function names, variables, from Treesitter",
+    },
+    {
+      ";c",
+      function()
+        local builtin = require("telescope.builtin")
+        builtin.lsp_incoming_calls()
+      end,
+      desc = "Lists LSP incoming calls for word under the cursor",
     },
   },
   opts = function(_, opts)
@@ -79,7 +113,7 @@ return {
     local actions = require("telescope.actions")
     local fb_actions = require("telescope").extensions.file_browser.actions
 
-    opts.defaults = vim.tbl_deep_extend("force", opts.defaults, {
+    opts.defaults = vim.tbl_deep_extend("force", opts.defaults or {}, {
       wrap_results = true,
       layout_strategy = "horizontal",
       layout_config = { prompt_position = "top" },
