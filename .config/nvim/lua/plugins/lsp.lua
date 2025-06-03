@@ -29,6 +29,20 @@ return {
       "netmute/ctags-lsp.nvim",
     },
     config = function()
+      vim.lsp.config('clangd', {
+        settings = {
+          clangd = {
+            InlayHints = {
+              Designators = true,
+              Enabled = true,
+              ParameterNames = true,
+              DeducedTypes = true,
+            },
+            fallbackFlags = { "-std=c++20" },
+          }
+        }
+      })
+
       vim.lsp.config['lua_ls'] = {
         settings = {
           Lua = {

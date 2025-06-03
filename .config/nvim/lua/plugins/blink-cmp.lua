@@ -15,7 +15,6 @@ return {
             name = "lsp",
             enabled = true,
             module = "blink.cmp.sources.lsp",
-            kind = "LSP",
             score_offset = 90,
           },
           buffer = {

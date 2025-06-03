@@ -62,3 +62,6 @@ vim.keymap.set('n', '<C-w>t', ':!ctags -R --languages=C++,C --fields=+iaS --extr
 -- Clang Format
 vim.keymap.set('n', '<C-w>f', ':<C-u>ClangFormat<CR>', {})
 vim.keymap.set('v', '<C-w>f', ':ClangFormat<CR>', {})
+
+-- InlayHints Toggle
+vim.keymap.set('n', '<C-i>', ':InlayHintsToggle<CR>', {})
