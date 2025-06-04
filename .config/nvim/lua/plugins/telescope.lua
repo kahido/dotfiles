@@ -38,14 +38,6 @@ return {
       desc = "Lists open buffers"
     },
     {
-      ";t",
-      function()
-        local builtin = require("telescope.builtin")
-        builtin.tags()
-      end,
-      desc = "Lists tags"
-    },
-    {
       ";;",
       function()
         local builtin = require("telescope.builtin")
@@ -113,16 +105,16 @@ return {
     local actions = require("telescope.actions")
     local fb_actions = require("telescope").extensions.file_browser.actions
 
-    opts.defaults = vim.tbl_deep_extend("force", opts.defaults or {}, {
-      wrap_results = true,
-      layout_strategy = "horizontal",
-      layout_config = { prompt_position = "top" },
-      sorting_strategy = "ascending",
-      winblend = 0,
-      mappings = {
-        n = {},
-      },
-    })
+    -- opts.defaults = vim.tbl_deep_extend("force", opts.defaults or {}, {
+    --   wrap_results = true,
+    --   layout_strategy = "horizontal",
+    --   layout_config = { prompt_position = "top" },
+    --   sorting_strategy = "ascending",
+    --   winblend = 0,
+    --   mappings = {
+    --     n = {},
+    --   },
+    -- })
     opts.pickers = {
       diagnostics = {
         theme = "ivy",
