@@ -1,7 +1,12 @@
 vim.api.nvim_create_autocmd({"BufNewFile", "BufReadPost"}, {
-  pattern = {"*.lua", "*.{yaml,yml}", "CMakeLists.txt"},
+  pattern = {"*.lua", "*.{yaml,yml}", "*.cmake", "CMakeLists.txt"},
   command = "setlocal ts=2 sts=2 sw=2 expandtab",
 })
+
+-- vim.api.nvim_create_autocmd("BufEnter", {
+--   pattern = {"*.log"},
+--   command = "setlocal foldtext=foldtext()",
+-- })
 
 vim.api.nvim_set_hl(0, 'TrailingWhitespace', { bg='LightRed' })
 -- vim.api.nvim_set_hl(0, 'TrailingWhitespace', { bg='#d75f5f' })

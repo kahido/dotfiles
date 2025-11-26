@@ -48,6 +48,14 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 -- Show Treesitter Highlight Group
 vim.keymap.set('n', 'qq', ':TSHighlightCapturesUnderCursor<CR>', { silent = true })
 
+-- CodeCompanion
+vim.keymap.set({ "n", "v" }, "<leader>a", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "<leader>c", "<cmd>CodeCompanionChat Toggle<cr>", { noremap = true, silent = true })
+vim.keymap.set("v", "ga", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, silent = true })
+
+-- Expand 'cc' into 'CodeCompanion' in the command line
+vim.cmd([[cab cc CodeCompanion]])
+
 -- ZenMode
 vim.keymap.set('n', '<leader>z', '<CMD>ZenMode<CR>', { silent = true })
 
@@ -57,7 +65,7 @@ vim.keymap.set('n', '<leader>T', ':HopWordCurrentLine<CR>')
 vim.keymap.set('n', '<leader>/', ':HopPattern<CR>')
 
 -- CTags
-vim.keymap.set('n', '<C-w>t', ':!ctags -R --languages=C++,C --fields=+iaS --extras=+q --kinds-c++=+pZ --kinds-c=+p -f $HOME/code/tags $HOME/code/*<CR>', { silent = true })
+vim.keymap.set('n', '<C-w>t', ':!ctags -R --languages=C++,C --fields=+niazS --extras=+q --kinds-c++=+pxZ --kinds-c=+px -f $HOME/code/tags $HOME/code/*<CR>', { silent = true })
 
 -- Clang Format
 vim.keymap.set('n', '<C-w>f', ':<C-u>ClangFormat<CR>', {})
