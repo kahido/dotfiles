@@ -1,8 +1,7 @@
 return {
   {
     'saghen/blink.cmp',
-    version = '*',
-    build = 'cargo build --release',
+    version = '1.*',
     enabled = true,
     dependencies = {
       "fang2hou/blink-copilot"
