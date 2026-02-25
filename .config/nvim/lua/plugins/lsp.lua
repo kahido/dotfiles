@@ -13,7 +13,7 @@ return {
         automatic_installation = true,
         automatic_enable = true,
         ensure_installed = {
-          "clangd", -- C/C++ language server not configured (install manualy)
+          "clangd",
           "cmake",
           "lua_ls",
           "bashls",

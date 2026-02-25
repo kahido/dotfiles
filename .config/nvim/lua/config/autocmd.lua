@@ -8,6 +8,13 @@ vim.api.nvim_create_autocmd({"BufNewFile", "BufReadPost"}, {
 --   command = "setlocal foldtext=foldtext()",
 -- })
 
+vim.api.nvim_create_autocmd({"BufNewFile", "BufReadPost"}, {
+  pattern = {"*.{cpp,hpp,hxx,h}"},
+  command = [[
+    lua vim.diagnostic.enable(false)
+  ]]
+})
+
 vim.api.nvim_set_hl(0, 'TrailingWhitespace', { bg='LightRed' })
 -- vim.api.nvim_set_hl(0, 'TrailingWhitespace', { bg='#d75f5f' })
 
