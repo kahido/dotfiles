@@ -13,7 +13,7 @@ return {
         automatic_installation = true,
         automatic_enable = true,
         ensure_installed = {
-          -- "clangd",
+          "clangd",
           "cmake",
           "lua_ls",
           "bashls",
@@ -35,19 +35,19 @@ return {
         capabilities = capabilities,
       })
 
-      -- vim.lsp.config('clangd', {
-      --   settings = {
-      --     clangd = {
-      --       InlayHints = {
-      --         Designators = true,
-      --         Enabled = true,
-      --         ParameterNames = true,
-      --         DeducedTypes = true,
-      --       },
-      --       fallbackFlags = { "-std=c++20" },
-      --     }
-      --   }
-      -- })
+      vim.lsp.config('clangd', {
+        settings = {
+          clangd = {
+            InlayHints = {
+              Designators = true,
+              Enabled = true,
+              ParameterNames = true,
+              DeducedTypes = true,
+            },
+            fallbackFlags = { "-std=c++20" },
+          }
+        }
+      })
 
       vim.lsp.config('lua_ls', {
         settings = {
@@ -61,7 +61,11 @@ return {
       })
 
       vim.lsp.config('ctags-lsp', {
+        cmd = { "ctags-lsp" },
+        filetypes = { "cpp" },
       })
+
+      vim.lsp.enable("ctags-lsp")
 
       vim.diagnostic.config({
         virtual_text = true,
