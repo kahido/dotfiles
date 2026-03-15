@@ -10,7 +10,7 @@ return {
         chat = {
           adapter = {
             name = "copilot",
-            model = "claude-sonnet-4.5",
+            model = "claude-haiku-4.5",
             temperature = 0.1,
           },
           opts = {
@@ -93,7 +93,7 @@ When explaining or reviewing code:
         inline = {
           adapter = {
             name = "copilot",
-            model = "claude-sonnet-4.5",
+            model = "claude-haiku-4.5",
             temperature = 0.1,
           },
         }

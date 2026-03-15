@@ -71,6 +71,7 @@ if [[ ! "$PATH" == *${HOME}/.local/bin* ]]; then
 fi
 
 alias git-dotfiles='/usr/bin/git --git-dir=${HOME}/.dotfiles/ --work-tree=${HOME}'
+alias shy='start-hyprland'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

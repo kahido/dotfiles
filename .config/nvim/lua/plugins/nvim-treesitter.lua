@@ -9,7 +9,8 @@ return {
         "yaml",
         "lua",
         "comment",
-        "gitignore"
+        "gitignore",
+        "glsl"
       },
       highlight = {
         enable = true,
