@@ -17,7 +17,8 @@ return {
           "cmake",
           "lua_ls",
           "bashls",
-          "jsonls"
+          "jsonls",
+          "glsl_analyzer"
         },
       }
     end,

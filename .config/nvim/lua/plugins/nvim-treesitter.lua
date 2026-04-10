@@ -1,34 +1,72 @@
+if vim.g.treesitter_branch ~= 'main' then return {} end
+
+-- on main branch, treesitter isn't started automatically
+vim.api.nvim_create_autocmd({ 'Filetype' }, {
+  callback = function(event)
+    -- make sure nvim-treesitter is loaded
+    local ok, nvim_treesitter = pcall(require, 'nvim-treesitter')
+
+    -- no nvim-treesitter, maybe fresh install
+    if not ok then return end
+
+    local parsers = require('nvim-treesitter.parsers')
+
+    if not parsers[event.match] or not nvim_treesitter.install then return end
+
+    local ft = vim.bo[event.buf].ft
+    local lang = vim.treesitter.language.get_lang(ft)
+    nvim_treesitter.install({ lang }):await(function(err)
+      if err then
+        vim.notify('Treesitter install error for ft: ' .. ft .. ' err: ' .. err)
+        return
+      end
+
+      pcall(vim.treesitter.start, event.buf)
+      vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+      vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+    end)
+  end,
+})
+
 return {
-  {
+  ---@module 'lazy'
+  ---@type LazySpec
+  { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
-    opts = {
-      ensure_installed = {
+    event = 'VeryLazy',
+
+    branch = 'main',
+    build = function()
+      -- update parsers, if TSUpdate exists
+      if vim.fn.exists(':TSUpdate') == 2 then vim.cmd('TSUpdate') end
+    end,
+
+    -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
+    ---@module 'nvim-treesitter'
+    ---@type function|TSConfig
+    ---@diagnostic disable-next-line: missing-fields
+    config = function(_, _)
+      local ensure_installed = {
+        'bash',
         "cpp",
         "cmake",
+        'diff',
+        'lua',
         "json",
         "yaml",
-        "lua",
         "comment",
         "gitignore",
-        "glsl"
-      },
-      highlight = {
-        enable = true,
-        disable = function(_, bufnr)
-          return vim.api.nvim_buf_line_count(bufnr) > 50000
-        end,
-        additional_vim_regex_highlighting = false,
-      },
-      indent = {
-        enable = false,
-        disable = {},
-      },
-    },
-    config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
+        "glsl",
+        'markdown',
+      }
+
+      -- make sure nvim-treesitter can load
+      local ok, nvim_treesitter = pcall(require, 'nvim-treesitter')
+
+      -- no nvim-treesitter, maybe fresh install
+      if not ok then return end
+
+      nvim_treesitter.install(ensure_installed)
     end,
   },
-  {
-    'nvim-treesitter/playground',
-  }
 }

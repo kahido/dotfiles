@@ -70,6 +70,10 @@ if [[ ! "$PATH" == *${HOME}/.local/bin* ]]; then
     export PATH="${PATH:+${PATH}:}${HOME}/.local/bin"
 fi
 
+if [[ ! "$PATH" == *${HOME}/.cargo/bin* ]]; then
+    export PATH="${PATH:+${PATH}:}${HOME}/.cargo/bin"
+fi
+
 alias git-dotfiles='/usr/bin/git --git-dir=${HOME}/.dotfiles/ --work-tree=${HOME}'
 alias shy='start-hyprland'
 
