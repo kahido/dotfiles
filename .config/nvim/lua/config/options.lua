@@ -62,3 +62,6 @@ vim.g.lazyvim_cmp = "blink.cmp"
 
 -- Workaround for treesitter flickering
 vim.g._ts_force_sync_parsing = true
+
+-- Disable deprecated warnings
+vim.deprecate = function() end
