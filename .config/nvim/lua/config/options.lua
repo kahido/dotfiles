@@ -39,6 +39,19 @@ vim.opt.colorcolumn = "90"
 vim.opt.tags = { 'tags;' }
 vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 
+vim.opt.fillchars = {
+  fold = ' ',
+  diff = '╱',
+  wbr = '─',
+  msgsep = '─',
+  horiz = ' ',
+  horizup = '│',
+  horizdown = '│',
+  vertright = '│',
+  vertleft = '│',
+  verthoriz = '│',
+}
+
 -- Lists
 vim.opt.list = true
 vim.opt.listchars = {

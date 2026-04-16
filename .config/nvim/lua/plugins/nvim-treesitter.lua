@@ -1,4 +1,4 @@
-if vim.g.treesitter_branch ~= 'main' then return {} end
+-- if vim.g.treesitter_branch ~= 'main' then return {} end
 
 -- on main branch, treesitter isn't started automatically
 vim.api.nvim_create_autocmd({ 'Filetype' }, {
