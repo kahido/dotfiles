@@ -56,6 +56,14 @@ vim.keymap.set("v", "ga", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, si
 -- Expand 'cc' into 'CodeCompanion' in the command line
 vim.cmd([[cab cc CodeCompanion]])
 
+-- Diffview
+vim.keymap.set('n', ',hq', '<cmd>DiffviewClose<cr>', { desc = 'Close history' })
+vim.keymap.set('n', ',hh', '<cmd>DiffviewFileHistory<cr>', { desc = 'Repo history' })
+vim.keymap.set('n', ',hf', '<cmd>DiffviewFileHistory --follow %<cr>', { desc = 'File history' })
+vim.keymap.set('v', ',hl', "<Esc><Cmd>'<,'>DiffviewFileHistory --follow<CR>", { desc = 'Range history' })
+vim.keymap.set('n', ',hl', '<Cmd>.DiffviewFileHistory --follow<CR>', { desc = 'Line history' })
+vim.keymap.set('n', ',d', '<cmd>DiffviewOpen<cr>', { desc = 'Repo diff' })
+
 -- ZenMode
 vim.keymap.set('n', '<leader>z', '<CMD>ZenMode<CR>', { silent = true })
 
