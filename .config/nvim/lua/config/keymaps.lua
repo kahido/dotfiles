@@ -64,20 +64,9 @@ vim.keymap.set('v', ',hl', "<Esc><Cmd>'<,'>DiffviewFileHistory --follow<CR>", { 
 vim.keymap.set('n', ',hl', '<Cmd>.DiffviewFileHistory --follow<CR>', { desc = 'Line history' })
 vim.keymap.set('n', ',d', '<cmd>DiffviewOpen<cr>', { desc = 'Repo diff' })
 
--- ZenMode
-vim.keymap.set('n', '<leader>z', '<CMD>ZenMode<CR>', { silent = true })
-
--- hop
-vim.keymap.set('n', '<leader>t', ':HopWord<CR>')
-vim.keymap.set('n', '<leader>T', ':HopWordCurrentLine<CR>')
-vim.keymap.set('n', '<leader>/', ':HopPattern<CR>')
-
 -- CTags
 vim.keymap.set('n', '<C-w>t', ':!ctags -R --languages=C++,C --fields=+niazS --extras=+q --kinds-c++=+pxZ --kinds-c=+px -f $HOME/code/tags $HOME/code/*<CR>', { silent = true })
 
 -- Clang Format
 vim.keymap.set('n', '<C-w>f', ':<C-u>ClangFormat<CR>', {})
 vim.keymap.set('v', '<C-w>f', ':ClangFormat<CR>', {})
-
--- InlayHints Toggle
-vim.keymap.set('n', '<C-i>', ':InlayHintsToggle<CR>', {})
