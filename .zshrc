@@ -34,7 +34,9 @@ unsetopt CORRECT_ALL
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
-#_comp_options+=(globdots)		# Include hidden files.
+# _comp_options+=(globdots) # Include hidden files.
+
+fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
@@ -75,8 +77,9 @@ if [[ ! "$PATH" == *${HOME}/.cargo/bin* ]]; then
 fi
 
 alias git-dotfiles='/usr/bin/git --git-dir=${HOME}/.dotfiles/ --work-tree=${HOME}'
+alias gitd='/usr/bin/git --git-dir=${HOME}/.dotfiles/ --work-tree=${HOME}'
 alias shy='start-hyprland'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-fpath+=${ZDOTDIR:-~}/.zsh_functions
+[ -f ~/.zshenv ] && source ~/.zshenv
