@@ -76,6 +76,23 @@ if [[ ! "$PATH" == *${HOME}/.cargo/bin* ]]; then
     export PATH="${PATH:+${PATH}:}${HOME}/.cargo/bin"
 fi
 
+
+alias gs='git status --short'
+alias gd="git diff --output-indicator-new=' ' --output-indicator-old=' '"
+alias gds="gd --staged"
+
+alias ga='git add'
+alias gap='git add --patch'
+alias gc='git commit'
+
+alias gp='git push'
+alias gu='git pull'
+
+alias gl="git log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
+alias gb='git branch'
+
+alias gc='git checkout'
+
 alias git-dotfiles='/usr/bin/git --git-dir=${HOME}/.dotfiles/ --work-tree=${HOME}'
 alias gitd='/usr/bin/git --git-dir=${HOME}/.dotfiles/ --work-tree=${HOME}'
 alias shy='start-hyprland'
