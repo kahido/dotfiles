@@ -27,7 +27,6 @@ return {
   {
     'neovim/nvim-lspconfig',
     dependencies = {
-      'saghen/blink.cmp',
       'netmute/ctags-lsp',
     },
     config = function()

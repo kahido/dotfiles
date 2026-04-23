@@ -6,6 +6,7 @@ return {
   },
 
   build = 'cargo build --release',
+  branch = "v1",
   -- version = '1.*',
 
   ---@module 'blink.cmp'
