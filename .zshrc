@@ -76,25 +76,28 @@ if [[ ! "$PATH" == *${HOME}/.cargo/bin* ]]; then
     export PATH="${PATH:+${PATH}:}${HOME}/.cargo/bin"
 fi
 
-
+# Aliases: Git
 alias gs='git status --short'
 alias gd="git diff --output-indicator-new=' ' --output-indicator-old=' '"
 alias gds="gd --staged"
-
 alias ga='git add'
-alias gap='git add --patch'
+alias gap='ga --patch'
+alias gb='git branch --verbose'
+alias gba='gb --all'
 alias gc='git commit'
-
+alias gca='gc --amend --no-edit'
+alias gce='gc --amend'
+alias gco='git checkout'
+alias gm='git merge'
 alias gp='git push'
 alias gu='git pull'
-
+alias gf='git fetch --prune --all'
 alias gl="git log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
-alias gb='git branch'
+alias gl2="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --date=relative --branches --remotes --tags"
+alias gl3="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --date=relative"
 
-alias gc='git checkout'
+alias gdot='/usr/bin/git --git-dir=${HOME}/.dotfiles/ --work-tree=${HOME}'
 
-alias git-dotfiles='/usr/bin/git --git-dir=${HOME}/.dotfiles/ --work-tree=${HOME}'
-alias gitd='/usr/bin/git --git-dir=${HOME}/.dotfiles/ --work-tree=${HOME}'
 alias shy='start-hyprland'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
